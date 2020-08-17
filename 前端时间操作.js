@@ -290,3 +290,25 @@ function convertDate (date, day) {
     let result = Y + "-" + M + "-" + D
     return result;
 }
+
+//获取当前时间的前n年
+function getLastYearDate(n){
+        let date = new Date();
+        var strYear = date.getFullYear() - n;
+        var strDay = date.getDate();
+        var strMonth = date.getMonth()+1;
+        if(strMonth<10)
+        {
+          strMonth="0"+strMonth;
+        }
+        if(strDay<10)
+        {
+          strDay="0"+strDay;
+        }
+        let datastr = strYear+"-"+strMonth+"-"+strDay;
+        return datastr;
+      }
+
+
+
+
