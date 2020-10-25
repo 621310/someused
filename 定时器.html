@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>定时器</title>
+</head>
+<body>
+    <div class="wrapper">
+        <img src="http://47.103.15.187/resource/tk.jpg" alt="">
+        <img src="http://47.103.15.187/resource/hy.jpg" alt="">
+        <img src="http://47.103.15.187/resource/jh.jpg" alt="">
+    </div>
+    <div>
+
+    </div>
+</body>
+</html>
+<style>
+    .wrapper{
+        width: 350px;
+        height: 200px;  
+    }
+    .wrapper img{
+        width: 350px;
+        height: 200px;
+        /* display: none; */
+    }
+</style>
+<script>
+
+    var div = document.getElementsByTagName("div")
+    div[1].style.height = '200px'
+    div[1].style.width = '200px'
+    div[1].style.backgroundColor = 'red'
+    div[1].style.display = 'none'
+
+var imgs = document.getElementsByTagName("img");
+
+let i = 0;
+for(let j=0;j<imgs.length;j++){
+    imgs[j].setAttribute('style', 'display: none !important');
+}
+// imgs[0].style.display = "iinline-block !important"
+imgs[0].setAttribute('style', 'display: iinline-block !important');
+console.log(imgs)
+// imgs[0].style.display = "iinline-block"
+var timer = setInterval(() => {
+    i++
+    console.log(i)
+    for(let j=0;j<imgs.length;j++){
+        imgs[j].setAttribute('style', 'display: none !important');
+        if(j == i){
+            imgs[j].setAttribute('style', 'display: iinline-block !important');
+        }
+    }
+    if(i==imgs.length-1){
+        i = -1
+    }
+}, 2000);
+
+
+
+var wrapper = document.getElementsByClassName("wrapper")[0]
+wrapper.addEventListener("mouseover",function(){
+    clearInterval(timer)
+    timer = null
+    console.log("ddd")
+})
+wrapper.addEventListener("mouseout",function(){
+    timer = setInterval(() => {
+    i++
+    console.log(i)
+    for(let j=0;j<imgs.length;j++){
+        imgs[j].setAttribute('style', 'display: none !important');
+        if(j == i){
+            imgs[j].setAttribute('style', 'display: iinline-block !important');
+        }
+    }
+    if(i==imgs.length-1){
+        i = -1
+    }
+}, 2000);
+})
+
+//     var num = 0
+//    var timer = setInterval(function(){
+//         num++
+//         console.log(num)
+//         if(num == 3){
+//         clearInterval(timer)
+//     }
+//     },2000)
+
+//     var timer2 = setTimeout(function(){
+//         console.log("等几秒，我来了")
+//     },5000)
+
+
+</script>

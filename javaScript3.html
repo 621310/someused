@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+</head>
+<body>
+    <div>hi</div>
+
+    <div>
+        <span>111</span>
+        <span>222</span>
+        <span>333</span>
+        <div class="content" style="display: block;">111</div>
+        <div class="content">222</div>
+        <div class="content">333</div>
+    </div>
+</body>
+</html>
+<style>
+    span{
+        border: 1px solid black;
+    }
+    .content{
+        height: 300px;
+        border: 1px solid red;
+        display: none;
+    }
+    .active{
+        background-color: yellow;
+    }
+</style>
+<script>
+    // "use strict"
+
+    var titles = document.getElementsByTagName("span");
+    var contents = document.getElementsByClassName("content");
+    console.log(titles)
+    console.log(contents)
+    for(let i=0;i<titles.length;i++){
+
+        (function(n){
+            titles[n].onclick = function(){
+            console.log(n)
+            for(let j=0;j<titles.length;j++){
+                titles[j].className = ''
+                contents[j].style.display = 'none'
+            }
+            titles[n].className = 'active'
+            contents[n].style.display = 'block'
+        }
+        }(i))
+
+
+        // titles[i].onclick = function(){
+        //     console.log(i)
+        //     for(let j=0;j<titles.length;j++){
+        //         titles[j].className = ''
+        //         contents[j].style.display = 'none'
+        //     }
+        //     titles[i].className = 'active'
+        //     contents[i].style.display = 'block'
+        // }
+    }
+
+
+        function test(){
+            // console.log(arguments.callee)
+            console.log(this)
+        }
+        test()
+
+
+        var div = document.getElementsByTagName("div")[0]
+        div.style.width = '100px'
+        div.style.height = '100px'
+        div.style.backgroundColor = 'red'
+        div.onclick = function(){
+            div.style.backgroundColor = 'green'
+        }
+
+
+
+</script>

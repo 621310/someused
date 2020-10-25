@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button>常规函数</button>
+    <button>箭头函数</button>
+</body>
+</html>
+<script>
+    // es6新语法
+    //1,使用let声明变量，再快作用域内有效，不能重复声明，不能在初始化之前使用
+    //全局变量提升，会创建一个变量对象（Script）用来收集全局作用域下let定义的变量
+    let username = "zsf"
+
+//--------------------------------------------------------------------------------------
+    //2,const 定义常量，定义的常量不可以被修改
+    const age = 23;
+    // age = 34;
+    // console.log(age)  //报错 Assignment to constant variable.
+
+
+    //----------------------------------------------------------------------------------
+
+
+    //2，常规函数和箭头函数
+    //没有形参时()不能省略，用于站位
+
+    //箭头函数的this看外层是否有函数，如果有外层函数的this就是内部箭头函数的this，没有箭头函数的this只想Window
+
+    //箭头函数的this在箭头函数定义时指定，而常规函数的this在调用时指定
+    let btns = document.getElementsByTagName("button")
+    btns[0].onclick = function(){
+        console.info("看看常规函数调用时的this",this)
+    }
+
+    btns[1].onclick = () => {
+        console.info("看看箭头函数调用时的this",this)
+    }
+
+</script>
