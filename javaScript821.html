@@ -6,18 +6,18 @@
     <title>javaScriptDom</title>
 </head>
 <body>
-    <p>document代表整个文档对象</p>
-    <div>
-        <span></span>
-        <div class="erzi">
-            <p>parentNode:选择上级节点，包括上级节点下面的所有子节点</p>
-            <p>children:选择子节点只包含元素节点</p>
-            <div>firstElementChild:选择第一个子节点只包含元素节点,lastElementChild:选择第一个子节点只包含元素节点</div>
-            <div>
-                nodeName,nodeType
-            </div>
+<p>document代表整个文档对象</p>
+<div>
+    <span></span>
+    <div class="erzi">
+        <p>parentNode:选择上级节点，包括上级节点下面的所有子节点</p>
+        <p>children:选择子节点只包含元素节点</p>
+        <div>firstElementChild:选择第一个子节点只包含元素节点,lastElementChild:选择第一个子节点只包含元素节点</div>
+        <div>
+            nodeName,nodeType
         </div>
     </div>
+</div>
 </body>
 </html>
 <script>
@@ -26,15 +26,15 @@
     var erzi = document.getElementsByClassName("erzi")[0]
     var span = document.getElementsByTagName("span")[0]
     console.log(erzi)
-    console.info("parentNode:选择上级节点，包括上级节点下面的所有子节点",erzi.parentNode)
-    console.info("childNodes:选择子节点包括文本，标签，注释等子节点",erzi.childNodes)
-    console.info("firstChild:选择第一个子节点包括文本，标签，注释等子节点",erzi.firstChild)
+    console.info("parentNode:选择上级节点，包括上级节点下面的所有子节点", erzi.parentNode)
+    console.info("childNodes:选择子节点包括文本，标签，注释等子节点", erzi.childNodes)
+    console.info("firstChild:选择第一个子节点包括文本，标签，注释等子节点", erzi.firstChild)
 
-    console.info("children:选择子节点只包含元素节点",erzi.children)
-    console.info("firstElementChild:选择第一个子节点只包含元素节点",erzi.firstElementChild)
-    console.info("lastElementChild:选择第一个子节点只包含元素节点",erzi.lastElementChild)
+    console.info("children:选择子节点只包含元素节点", erzi.children)
+    console.info("firstElementChild:选择第一个子节点只包含元素节点", erzi.firstElementChild)
+    console.info("lastElementChild:选择第一个子节点只包含元素节点", erzi.lastElementChild)
 
-    console.info("节点是否存在子节点(包括文本，注释节点)，返回true/false",erzi.hasChildNodes())
+    console.info("节点是否存在子节点(包括文本，注释节点)，返回true/false", erzi.hasChildNodes())
 
     console.log(Document.prototype)
     console.log(Node.prototype)

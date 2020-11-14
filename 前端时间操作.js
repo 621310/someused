@@ -1,5 +1,5 @@
 //获取当前时间戳
-var timestamp = Date.parse(new  Date()); //精确到秒
+var timestamp = Date.parse(new Date()); //精确到秒
 var timestamp = (new Date()).valueOf();  //精确到毫秒
 var timestamp = new Date().getTime(); //精确到毫秒
 var timestamp = +new Date();
@@ -11,12 +11,12 @@ var timestamp = (new Date(" 2019-10-24 08:00:00")).getTime();
 
 
 //获取当前时间的前一天/后一天的时间戳
-var timestamp = +new Date() - 24*60*60*1000;
-var timestamp = +new Date() + 24*60*60*1000;
+var timestamp = +new Date() - 24 * 60 * 60 * 1000;
+var timestamp = +new Date() + 24 * 60 * 60 * 1000;
 
 
 //今日零点时间戳
-let timestamp = new Date(new Date().toLocaleDateString()).getTime()+24*60*60*1000-1;
+let timestamp = new Date(new Date().toLocaleDateString()).getTime() + 24 * 60 * 60 * 1000 - 1;
 
 
 //获取当前时间的n天后的时间戳
@@ -24,7 +24,7 @@ let timestamp = new Date(new Date().toLocaleDateString()).getTime()+24*60*60*100
  * @param {number} n 天数
  * @returns {Number} 返回值为时间毫秒值
  */
-function toNextTimes(n){
+function toNextTimes(n) {
     let timestamp = +new Date() + n * 86400000;
     return timestamp;
 }
@@ -35,9 +35,9 @@ function toNextTimes(n){
 /***
  *  @return {*} WeekFirstDay 返回本周第一天的时间
  */
-function showWeekFirstDay(){
-    let Nowdate=new Date();
-    let WeekFirstDay=new Date(Nowdate-(Nowdate.getDay()-1)*86400000);
+function showWeekFirstDay() {
+    let Nowdate = new Date();
+    let WeekFirstDay = new Date(Nowdate - (Nowdate.getDay() - 1) * 86400000);
     return WeekFirstDay;
 }
 
@@ -47,10 +47,10 @@ function showWeekFirstDay(){
 /***
  *  @return {*} WeekLastDay 返回本周最后一天的时间
  */
-function showWeekLastDay(){
-    let Nowdate=new Date();
-    let WeekFirstDay=new Date(Nowdate-(Nowdate.getDay()-1)*86400000);
-    let WeekLastDay=new Date((WeekFirstDay/1000+6*86400)*1000);
+function showWeekLastDay() {
+    let Nowdate = new Date();
+    let WeekFirstDay = new Date(Nowdate - (Nowdate.getDay() - 1) * 86400000);
+    let WeekLastDay = new Date((WeekFirstDay / 1000 + 6 * 86400) * 1000);
     return WeekLastDay;
 }
 
@@ -58,9 +58,9 @@ function showWeekLastDay(){
 /***
  *  @return {*} MonthFirstDay 返回本月第一天的时间
  */
-function showMonthFirstDay(){
-    let Nowdate=new Date();
-    let MonthFirstDay=new Date(Nowdate.getFullYear(),Nowdate.getMonth());
+function showMonthFirstDay() {
+    let Nowdate = new Date();
+    let MonthFirstDay = new Date(Nowdate.getFullYear(), Nowdate.getMonth());
     return MonthFirstDay;
 }
 
@@ -70,10 +70,10 @@ function showMonthFirstDay(){
 /***
  *  @return {*} MonthLastDay 返回本月最后一天的时间
  */
-function showMonthLastDay(){
-    let Nowdate=new Date();
-    let MonthNextFirstDay=new Date(Nowdate.getFullYear(),Nowdate.getMonth()+1);
-    let MonthLastDay=new Date(MonthNextFirstDay-86400000);
+function showMonthLastDay() {
+    let Nowdate = new Date();
+    let MonthNextFirstDay = new Date(Nowdate.getFullYear(), Nowdate.getMonth() + 1);
+    let MonthLastDay = new Date(MonthNextFirstDay - 86400000);
     return MonthLastDay;
 }
 
@@ -83,7 +83,7 @@ function showMonthLastDay(){
  * @param {String} time - 日期字符串，如'2018-8-8','2018,8,8','2018/8/8'
  * @returns {Number} 返回值为时间毫秒值
  */
-function timeToTimestamp (time) {
+function timeToTimestamp(time) {
     let date = new Date(time);
     let timestamp = date.getTime();
     return timestamp;
@@ -144,7 +144,7 @@ function getdataTimeSec() {
             break;
     }
     let timeText = year + "年" + month + "月" + day + "日  " + " " + weekDay +
-     " " + h + ":" + m +":" + s;
+        " " + h + ":" + m + ":" + s;
 
     return timeText
 }
@@ -224,35 +224,35 @@ function getFormatDate(date, dateType) {
     }
 
     let dateText = dateObj.getFullYear() + '年' + (dateObj.getMonth() + 1) + '月' +
-     dateObj.getDate() + '日';
+        dateObj.getDate() + '日';
     if (dateType == "yyyy-mm-dd") {
         dateText = dateObj.getFullYear() + '-' + (dateObj.getMonth() + 1) + '-' +
-         dateObj.getDate();
+            dateObj.getDate();
     }
     if (dateType == "yyyy.mm.dd") {
         dateText = dateObj.getFullYear() + '.' + (dateObj.getMonth() + 1) + '.' +
-         dateObj.getDate();
+            dateObj.getDate();
     }
     if (dateType == "yyyy-mm-dd MM:mm:ss") {
         dateText = dateObj.getFullYear() + '-' + month + '-' + strDate + ' ' +
-         hours + ":" + minutes + ":" + seconds;
+            hours + ":" + minutes + ":" + seconds;
     }
     if (dateType == "mm-dd MM:mm:ss") {
         dateText = month + '-' + strDate + ' ' + hours + ":" + minutes + ":" + seconds;
     }
     if (dateType == "yyyy年mm月dd日 MM:mm:ss") {
         dateText = dateObj.getFullYear() + '年' + month + '月' + strDate + '日' +
-         ' ' + hours + ":" + minutes + ":" + seconds;
+            ' ' + hours + ":" + minutes + ":" + seconds;
     }
     return dateText;
- }
+}
 
 
- //判断是否为闰年
+//判断是否为闰年
 /**
-* @param  {number} year 要判断的年份
-* @return {boolean} 返回布尔值
-*/
+ * @param  {number} year 要判断的年份
+ * @return {boolean} 返回布尔值
+ */
 function leapYear(year) {
     return !(year % (year % 100 ? 4 : 400));
 }
@@ -260,14 +260,14 @@ function leapYear(year) {
 
 //返回两个年份之间的闰年
 /**
-* @param  {number} start 开始年份
-* @param  {number} end 结束年份
-* @return {array}  arr 返回符合闰年的数组
-*/
+ * @param  {number} start 开始年份
+ * @param  {number} end 结束年份
+ * @return {array}  arr 返回符合闰年的数组
+ */
 function leapYears(start, end) {
     let arr = [];
-    for (var i=start; i<end; i++) {
-        if ( leapYear(i) ) {
+    for (var i = start; i < end; i++) {
+        if (leapYear(i)) {
             arr.push(i)
         }
     }
@@ -277,37 +277,35 @@ function leapYears(start, end) {
 
 //设置几天后的日期
 /**
-* @param  {string} date 起始日期
-* @param  {number} day 向后的天数
-* @return {string} 返回想要得到的日期
-*/
-function convertDate (date, day) {
+ * @param  {string} date 起始日期
+ * @param  {number} day 向后的天数
+ * @return {string} 返回想要得到的日期
+ */
+function convertDate(date, day) {
     let tempDate = new Date(date);
-    tempDate.setDate(tempDate.getDate()+day);
+    tempDate.setDate(tempDate.getDate() + day);
     let Y = tempDate.getFullYear();
-    let M = tempDate.getMonth()+1 < 10 ? '0'+(tempDate.getMonth()+1) : tempDate.getMonth()+1;
-    let D = tempDate.getDate() < 10 ? '0'+(tempDate.getDate()) : tempDate.getDate();
+    let M = tempDate.getMonth() + 1 < 10 ? '0' + (tempDate.getMonth() + 1) : tempDate.getMonth() + 1;
+    let D = tempDate.getDate() < 10 ? '0' + (tempDate.getDate()) : tempDate.getDate();
     let result = Y + "-" + M + "-" + D
     return result;
 }
 
 //获取当前时间的前n年
-function getLastYearDate(n){
-        let date = new Date();
-        var strYear = date.getFullYear() - n;
-        var strDay = date.getDate();
-        var strMonth = date.getMonth()+1;
-        if(strMonth<10)
-        {
-          strMonth="0"+strMonth;
-        }
-        if(strDay<10)
-        {
-          strDay="0"+strDay;
-        }
-        let datastr = strYear+"-"+strMonth+"-"+strDay;
-        return datastr;
-      }
+function getLastYearDate(n) {
+    let date = new Date();
+    var strYear = date.getFullYear() - n;
+    var strDay = date.getDate();
+    var strMonth = date.getMonth() + 1;
+    if (strMonth < 10) {
+        strMonth = "0" + strMonth;
+    }
+    if (strDay < 10) {
+        strDay = "0" + strDay;
+    }
+    let datastr = strYear + "-" + strMonth + "-" + strDay;
+    return datastr;
+}
 
 
 
