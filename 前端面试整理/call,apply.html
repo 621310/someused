@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+
+    <script>
+        function Person(name,age){
+            console.log(this);
+            this.name = name;
+            this.age = age;
+        }
+        let p = new Person("lyl",22);
+
+        function test(num){
+            //默认this指向window
+            console.log(this)
+            console.log(num)
+        }
+        //当方法使用call调用时，可以改变this指向，this指向第一个参数
+        test.call({},6)
+        test.apply({},[8])
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Symbol</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    let s = Symbol();
+    console.log(typeof s)
+    //由于每一个 Symbol 值都是不相等的，这意味着 Symbol 值可以用于对象的属性名，这可以有效避免同名属性，也可以保证属性名不被外部覆盖重写：
+    let s2 = Symbol();
+    console.log(s == s2)
+</script>

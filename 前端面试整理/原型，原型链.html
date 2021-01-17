@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+
+<script>
+    Object.prototype.name = "祖先"
+    function Father(){
+        console.log("eee")
+    }
+    Father.prototype.money = "2000万";
+    let father = new Father();
+    console.log(father.money)
+
+    function Son(){
+
+    }
+    Son.prototype = father;
+    let son = new Son();
+    console.log("儿子的钱",son.money)
+    console.log("看看祖先",son.name)
+
+    let num = 124;
+    console.log("num.call.toString",num.call().toString());
+</script>
+</html>
