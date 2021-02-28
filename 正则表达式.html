@@ -11,10 +11,39 @@
 </html>
 <script>
     // console.log("abc\"dfdf")
+    //js转义符号\
+    var str = "abc\\\"de";
+    //正则表达式的作用：匹配特殊字符或有特殊搭配的字符的最佳选择
+    var reg = /abc/;
+    var reg2 = /abc/i; //加i时忽略大小写
+    console.log("字符串中是否包含正则表达式reg指定的内容：",reg.test('Abcde'));
+    console.log("字符串中是否包含正则表达式reg1指定的内容：",reg2.test('Abcde'));
 
-    function test() {
-        a = 8
-    }
+    let reg3 = new RegExp("abc");
+    console.log("字符串str中是否包含正则表达式reg3指定的内容：",reg3.test(str));
 
-    alert(a)
+
+    //字符串方法match,字符串中是否包含正则表达式的内容,返回一个数组，当正则表达式加‘g’时返回所有匹配的结果,返回一个数组，
+    //不加‘g’时返回一个对象，正则表达式在字符串中首次出现的位置
+    let tmp = "fhsk123fjkwehfl12314njf";
+    console.log("字符串中是否包含正则表达式的内容",tmp.match(new RegExp('123')));
+    console.log("字符串中是否包含正则表达式的内容",tmp.match(/123/g));
+
+
+    let reg4 = /[1234567890][1234567890][1234567890]/g;
+    let str4 = 'fhej234jffjs846ksfjdsk908';
+    console.log('reg4',str4.match(reg4));
+
+    let reg5 = /[0-9][a-z]/g;
+    console.log("reg5",str4.match(reg5));
+
+    console.log("abcfdsfdbcd","abcfdsfdbcd".match(/(abc|bcd)/g))
+
+
+    // \w === [0-9A-z]  \W === [^\w]  ^表示取反，例如 [^0-9] 表示不是0-9
+    // \d === [0-9] \D === [^\d]
+    console.log("hdsjf7f".match(/[^0-9]f/g));
+    console.log("fds3fef232fjkf99232".match(/[\w]3/g));
+
+
 </script>
